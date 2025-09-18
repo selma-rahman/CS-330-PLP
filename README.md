@@ -21,7 +21,7 @@ Some examples of programming use include:
 - Embedded Systems
 - Browsers
 - Databases
-And much more!
+- And much more!
 
 ## 4. Resources
 I will be getting information about this language from the sources listed below, which may be updated occasionally.
