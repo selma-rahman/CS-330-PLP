@@ -21,8 +21,6 @@ https://www.geeksforgeeks.org/cpp/history-of-c/
 ## Control Statements
 
 ## Resources
-I will be getting information about this language from the sources listed below, which may be updated occasionally.
-
 **Books:**
 - The C++ Programming Language by Bjarne Stroustrup (4th Ed)
 - Link: https://chenweixiang.github.io/docs/The_C++_Programming_Language_4th_Edition_Bjarne_Stroustrup.pdf
@@ -34,3 +32,4 @@ I will be getting information about this language from the sources listed below,
 - C++ Reference: https://cppreference.com/ 
 - cplusplus: https://cplusplus.com/
 
+This list may be updated occasionally.
