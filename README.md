@@ -1,7 +1,5 @@
 # C++ Tutorial 
-
-## 1. What is the name of the language for this tutorial?
-C++ (C plus plus)
+This is a repo for learning C++ in CS330 Programming Languages at Simmons University
 
 ## 2. History
 C++ was officially released in 1985, created by Bjarne Stroustrup, a Danish computer scientist
@@ -23,7 +21,11 @@ Some examples of programming use include:
 - Databases
 - And much more!
 
-## 4. Resources
+
+## Control Statements
+
+
+## Resources
 I will be getting information about this language from the sources listed below, which may be updated occasionally.
 
 **Books:**
