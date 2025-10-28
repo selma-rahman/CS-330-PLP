@@ -14,9 +14,11 @@ Some examples of programming use include: Game Development, Operating Systems, E
 https://en.wikipedia.org/wiki/C%2B%2B 
 https://www.geeksforgeeks.org/cpp/history-of-c/ 
 
+## Naming Conventions
+
+## Data Types
 
 ## Control Statements
-
 
 ## Resources
 I will be getting information about this language from the sources listed below, which may be updated occasionally.
