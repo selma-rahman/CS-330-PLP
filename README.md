@@ -22,6 +22,9 @@ https://www.geeksforgeeks.org/cpp/history-of-c/
 ### Boolean Values
 A boolean type is *bool*, which can take the values **true (1)** or **false(0)**. A boolean variable is declared with the *bool* keyword and can take the values *true* or *false*.
 
+### Conditional Statements
+#### *if* statement
+
 ## Resources
 **Books:**
 - The C++ Programming Language by Bjarne Stroustrup (4th Ed)
