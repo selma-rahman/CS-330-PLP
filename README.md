@@ -1,7 +1,7 @@
 # C++ Tutorial 
 This is a repo for learning C++ in CS330 Programming Languages at Simmons University
 
-## 2. History and Uses
+## History and Uses
 C++ was officially released in 1985, created by Bjarne Stroustrup, a Danish computer scientist
 working at AT&T Bell Labs in Murray Hill, New Jersey. Stroustrup wanted a language that built 
 off the foundation of C but with more features such as different functions, better type checking, 
