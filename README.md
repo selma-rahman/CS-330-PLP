@@ -24,7 +24,7 @@ A boolean type is *bool*, which can take the values **true (1)** or **false(0)**
 
 ### Conditional Statements
 #### *if* statement
-  The **if** statement is used to specify a block of code to be executed if a condition is true. Note that if is in lowercase, changing either or both letter to uppercase will produce a error.
+The **if** statement is used to specify a block of code to be executed if a condition is true. Note that **if** is in lowercase, changing either or both letters to uppercase will produce an error.
 ```
 if (some conditions)
   // statements
@@ -33,10 +33,40 @@ end
 If the condition is true then do something, and if not then do something else.
 
 #### *else* statement
-
-#### *if else* statement
+The **else** statement is used to specify a block of code to be executed if the condition is false.
+```
+if (condiition)
+// execute if the condition is true
+} else {
+// execute if the condition is false
+}
+```
+#### *else if* statement
+The **else if** statemennt is used to specify a new condition if the initial condition is false.
+```
+if (condition1) {
+// execute soem code if condition1 is true
+} else if (condition2) {e
+// execute some code if condition1 is false and condtion2 is true
+} else {
+// execute some code if condition1 and condition2 is fals
+```
 
 #### *switch* statement
+
+## Code Delimiters
+
+## Short-Circuit Evaluation
+
+## Problems...
+### dangling else problem...
+
+## Loops
+### While
+### For
+## etc
+
+## Block Variables vs Function Variables
 
 ## Resources
 
