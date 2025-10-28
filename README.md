@@ -64,7 +64,7 @@ if (condition1) {
 ## Loops
 ### While
 ### For
-## etc
+### etc
 
 ## Block Variables vs Function Variables
 
