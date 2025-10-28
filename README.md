@@ -24,8 +24,24 @@ A boolean type is *bool*, which can take the values **true (1)** or **false(0)**
 
 ### Conditional Statements
 #### *if* statement
+The **if** statement is used to specify a block of code to be executed if a condition is true. Note that if is in lowercase, changing either or both letter to uppercase will produce a error.
+
+'''
+if (some conditions)
+  // statements
+end
+'''
+
+If the condition is true then do something, and if not then do something else.
+
+#### *else* statement
+
+#### *if else* statement
+
+#### *switch* statement
 
 ## Resources
+
 **Books:**
 - The C++ Programming Language by Bjarne Stroustrup (4th Ed)
 - Link: https://chenweixiang.github.io/docs/The_C++_Programming_Language_4th_Edition_Bjarne_Stroustrup.pdf
