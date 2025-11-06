@@ -70,6 +70,16 @@ if (condition1) {
 
 ## Block Variables vs Function Variables
 
+## Functions
+
+### What is the syntax for declaring a function?
+### Rules about function placement
+### Recursive functions
+### Multiple Parameters 
+### Returning multiple values at the same time
+### Pass-by reference and Pass-by value
+### 
+
 ## Resources
 
 **Books:**
