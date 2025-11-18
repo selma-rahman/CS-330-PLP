@@ -80,6 +80,26 @@ if (condition1) {
 ### Pass-by reference and Pass-by value
 ### 
 
+## Classes & Inheritance
+### Does C++ support objects or something simmilar?
+Yes, C++ supports class types and structs, which are user-defined types that can contain data members (instance variables), member functions (methods), nested types, and more. A class and a struct are nearly identical, the only difference being default member access (private for class, public for struct). In C++ the term 'object' generally means an instance of any type (built-in or urser-defined).
+
+### Naming conventions for types, instance variables, functions
+The language itself does not enforce naming conventions, but there are widely used style guides that programmers follow for readability and consistency. Common patterns:
+- Type name (classes, structs, enums):
+- Member variables
+- Functions/methods:
+- Constants:
+
+### Standard methods for a common purpose 
+
+### How does inheritance work? Multiple inheritance?
+
+### If there is inheritance, how does C++ deal with overloading method names and resolving calls?
+
+## Further notes about objects and inheritance 
+
+
 ## Resources
 
 **Books:**
