@@ -81,15 +81,32 @@ if (condition1) {
 ### 
 
 ## Classes & Inheritance
-### Does C++ support objects or something simmilar?
-Yes, C++ supports class types and structs, which are user-defined types that can contain data members (instance variables), member functions (methods), nested types, and more. A class and a struct are nearly identical, the only difference being default member access (private for class, public for struct). In C++ the term 'object' generally means an instance of any type (built-in or urser-defined).
+### Does C++ support objects / structs / records? 
+Yes, C++ supports *class* and *struct* types, which are user-defined types that can contain data members (instance variables), member functions (methods), nested types, static mebers, etc. A *class* and a *struct* are nearly identical, the only difference being default access (private for class, public for struct). In C++ the term 'object' generally means an instance of any type (built-in or urser-defined).
 
-### Naming conventions for types, instance variables, functions
-The language itself does not enforce naming conventions, but there are widely used style guides that programmers follow for readability and consistency. Common patterns:
-- Type name (classes, structs, enums):
-- Member variables
-- Functions/methods:
-- Constants:
+Example:
+```
+struct Point {  // default publiic
+  double x, y;
+  double length() coonst {return std::hypot(x,y); }
+};
+class Person{ // default private
+  std::string name;
+public:
+  Person(std::string n): name(std::move(n)) {}
+  const std::string& getName() const { return name; }
+};
+```
+
+### Naming conventions for objects, instance variables, and functions
+C++ does not enforce naming conventions, but common community conventions help readability and consistency: 
+- Types (classes/structs/enum): PascalCase or CamelCase (Person, HttpServer, MyStruct)
+- Functions & Methods: snake_case or camelCase depending on project style (compute_bug, getValue, toString).
+- Member variables: m_prefix or trailing underscore to distinguish from parameters (m_value, value_). Example: int value_ or int m_value.
+- Constants/macros: kPascalCase or ALL_CAPS (macros usually ALL_CAPS).
+- Namespaces: lowercase or company::project style.
+
+Pick a style consistent with your project. Conventions are typically community/team-driven rather than language-enforced.
 
 ### Standard methods for a common purpose 
 
