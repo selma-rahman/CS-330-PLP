@@ -100,11 +100,11 @@ public:
 
 ### Naming conventions for objects, instance variables, and functions
 C++ does not enforce naming conventions, but common community conventions help readability and consistency: 
-- Types (classes/structs/enum): PascalCase or CamelCase (Person, HttpServer, MyStruct)
-- Functions & Methods: snake_case or camelCase depending on project style (compute_bug, getValue, toString).
-- Member variables: m_prefix or trailing underscore to distinguish from parameters (m_value, value_). Example: int value_ or int m_value.
-- Constants/macros: kPascalCase or ALL_CAPS (macros usually ALL_CAPS).
-- Namespaces: lowercase or company::project style.
+- **Types (classes/structs/enum)**: PascalCase or CamelCase (Person, HttpServer, MyStruct)
+- **Functions & Methods**: snake_case or camelCase depending on project style (compute_bug, getValue, toString).
+- **Member variables**: m_prefix or trailing underscore to distinguish from parameters (m_value, value_). Example: int value_ or int m_value.
+- **Constants/macros**: kPascalCase or ALL_CAPS (macros usually ALL_CAPS).
+- **Namespaces**: lowercase or company::project style.
 
 Pick a style consistent with your project. Conventions are typically community/team-driven rather than language-enforced.
 
