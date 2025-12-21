@@ -7,8 +7,57 @@ working at AT&T Bell Labs in Murray Hill, New Jersey. Stroustrup wanted a langua
 off the foundation of C but with more features such as different functions, better type checking, 
 classes, etc. in order to support larger software development. 
 
-C++ is a general purpose programming language, therefore it’s has many uses and can be seen everywhere.
-Some examples of programming use include: Game Development, Operating Systems, Embedded Systems, Browsers, Databases, and much more!
+C++ is a general purpose programming language. It can be seen in many areas, including:
+- Game design and graphics
+- Operating Systems
+- Embedded systems and frmware
+- Compilers
+- Browsers
+- Databases
+- and much more?
+
+## Installation
+To install C++ and start compiling programs, you need a compiler. Common choices include:
+- macOS/Linux: Clang or GCC (GNU Compler Collection)
+- Windows: MinGW-w64 or Microsoft Visual C++ Build Tools
+
+## Programming Environemnt / IDE
+C++ does not require a specific IDE. Many options exist, including:
+- Visual Studio Code (VS Code, plugin support)
+- Visual Studio (VS)
+- CLion
+- Xcode
+- Code::Blocks
+
+- My Choice: Visual Studio Code
+
+## Running Programs
+To compile a program fron the terminal:
+```
+g++ fileame.cpp -o program
+```
+then run:
+```
+./program
+```
+On Windows MinGW:
+```
+program.exe
+```
+
+## Writng Comments in C++
+Single line comments 
+```
+// this is a comment
+```
+Multi-line block comment
+```
+/*
+comments can be
+several lines
+long
+*/
+```
 
 **Sources:**
 https://en.wikipedia.org/wiki/C%2B%2B 
