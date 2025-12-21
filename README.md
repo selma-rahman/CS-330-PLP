@@ -66,7 +66,7 @@ https://www.geeksforgeeks.org/cpp/history-of-c/
 ## Naming Conventions
 ### Does C++ have reserved words?
 Yes, C++ has about 90+ reserved keywords (though this depends on the standard version, c++11, C++20, etc). 
-Some of these reserved words include: ``int``, ``class```, ``if``, ``else``, ``for``, ``return``, ``const``, ``while``.
+Some of these reserved words include: ``int``, ``class``, ``if``, ``else``, ``for``, ``return``, ``const``, ``while``.
 The compiler obstructs from using them as identifiers. 
 
 ## Data Types
