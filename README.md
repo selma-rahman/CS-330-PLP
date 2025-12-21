@@ -32,7 +32,7 @@ C++ does not require a specific IDE. Many options exist, including:
 - My Choice: Visual Studio Code
 
 ## Running Programs
-To compile a program fron the terminal:
+To compile a program from the terminal:
 ```
 g++ fileame.cpp -o program
 ```
@@ -63,11 +63,46 @@ long
 https://en.wikipedia.org/wiki/C%2B%2B 
 https://www.geeksforgeeks.org/cpp/history-of-c/ 
 
-## Naming Conventions
+## Data Types & Naming Conventions 
 ### Does C++ have reserved words?
-Yes, C++ has about 90+ reserved keywords (though this depends on the standard version, c++11, C++20, etc). 
+Yes, C++ has about 90+ reserved keywords (though this depends on the standard version, C++11, C++20, etc). 
 Some of these reserved words include: ``int``, ``class``, ``if``, ``else``, ``for``, ``return``, ``const``, ``while``.
 The compiler obstructs from using them as identifiers. 
+
+### Naming Requirements & Conventions
+#### C++ variable naming rules (which are enforced by the compiler)
+- Case sensitive
+- Must begin with a latter or underscore
+- Cannot start with a number
+- Only letter, number. and underscores allowed
+- Cannot use reserved keywords
+#### Community conventions (not compiler enforced)
+- Classes/Structs: PascalCase -> example ```TheClass```
+- Methods/Functions: camelCase -> ```doSomething()```
+- Variables: camelCase -> ```userCount```
+- Constants: SCREAMING_SNAKE_CASE -> ```SUPER_MAX```
+- Namespaces: lowercase -> ```image::render```
+- Private Data: camelCase + _ suffix -> ```data_```
+- Macros: SCREAMING_SNAKE_CASE -> ```GO_MODE```
+
+#### Is C++ statically typed or dynamically typed?
+C++ is **statically typed**. Variables types are determined at compile time.
+
+#### Strongly typed or weakly typed?
+Strongly typed, due to a few reasons:
+- Incompatible types cause compiler errors
+- Pointers require explicit conversoins
+- Implicit conversions exist but are limited
+
+#### Explicitly typed or implicitly typed?
+Traditionally, C++ is explicitly typed. 
+```
+int x = 42;
+```
+However, C++11. implicit type interference exiists via auto.
+```
+auto x = 42; // x becomes int implicitly 
+
 
 ## Data Types
 
