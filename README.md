@@ -149,8 +149,8 @@ These operators compare values and return a ``bool`` (1 for ``true``, 0 for ``fa
 - *: accesses value at poiinter address
 - **&**: returns memory address of a variable
 - **->**: accesses array elements via pointer
-- ``**new**``: allocates memory on the heap and returns a pointer to it.
-- ``**delete**``: frees memory previously  allocated with ``new``
+- ``new``: allocates memory on the heap and returns a pointer to it.
+- ``delete``: frees memory previously  allocated with ``new``
 
 **arrays/vector**:
 - **[]**; Subscript, accesses elements by index
