@@ -99,10 +99,73 @@ Traditionally, C++ is explicitly typed.
 ```
 int x = 42;
 ```
-However, C++11. implicit type interference exiists via auto.
+However, C++11 implicit type interference exists with ``auto``.
 ```
-auto x = 42; // x becomes int implicitly 
+auto x = 42; // x becomes int implicitly
+```
+#### Mutable vs Immutable Variables
+- Variables are mutable by default
+- to make identifiers immutable, you can use ``const``.
+```
+const int x =  42;
+```
 
+#### Operators 
+Operators depend on the type. Common ones include:
+
+***int***, **float**:
+- **+**: addition
+- **-**: subtraction
+- *: multiplication
+- **/*: divison
+- **Int divison**: Performs integer division, discarding any remainder
+- **Floats divison**: Performs floating-point divison
+- **%**: Modulus. Returns the remainder of division. **Only for intgers**.
+- **++**: Increments a value by 1
+- **--**: Decrements a value by 1
+
+**bool**:
+- **&&**: Logical AND; returns ``true`` if both operands are ``true``.
+- **||**: Logical OR; returns ``true`` if at least one operand is ``true``.
+- **!**: Logical NOT, Inverts the value; ``true`` becomes ``false`` and vce versa
+Alternatively, ``and``, ``or``, and ``not`` can be used nterchangeably with ``&&``, ``||``, and ``!``.
+**NOTE**: ``&&`` and ``||`` perform short-circuitng, meaning the second operand is only evaulated if the result is not gauranteed by the first.
+
+**Comparson Operators**:
+These operators compare values and return a ``bool`` (1 for ``true``, 0 for ``false``).
+- ``==`` (Equal to)
+- ``!=`` (Not equal to)
+- ``<``, ``>``, ``<=``, ``>=``
+
+**string**:
+- **+**: Concatenate
+- **+=**: Append
+- **Comparison**
+- **<<**: Output stream
+- **>>**: Input stream
+
+**pointers**:
+- *****: accesses value at poiinter address
+- **&**: returns memory address of a variable
+- ->: accesses array elements via pointer
+- **new**: allocates memory on the heap and returns a pointer to it.
+- **delete**: frees memory previously  allocated with ``new``
+
+**arrays/vector**:
+- **[]**; Subscript, accesses elements by index
+
+#### Mixed type operations
+Mixed type operations are allowed in C++, as it performs **type promotoin**
+```
+int x = 5;
+double y = 2.5;
+auto res = x + y; // becomes double
+```
+
+#### Limitions
+- cannot add strings + ints without conversion
+- cannot store mixed types in standard arrays/vectors
+- must explicitly connvert some data between types
 
 ## Data Types
 
