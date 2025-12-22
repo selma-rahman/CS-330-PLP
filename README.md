@@ -114,13 +114,13 @@ const int x =  42;
 Operators depend on the type. Common ones include:
 
 ***int***, **float**:
-- **+**: addition
+- *: addition
 - **-**: subtraction
 - *: multiplication
-- **/*: divison
+- **/**: divison
 - **Int divison**: Performs integer division, discarding any remainder
 - **Floats divison**: Performs floating-point divison
-- **%**: Modulus. Returns the remainder of division. **Only for intgers**.
+- **%**: Modulus. Returns the remainder of division. **Only for integers**.
 - **++**: Increments a value by 1
 - **--**: Decrements a value by 1
 
@@ -129,6 +129,7 @@ Operators depend on the type. Common ones include:
 - **||**: Logical OR; returns ``true`` if at least one operand is ``true``.
 - **!**: Logical NOT, Inverts the value; ``true`` becomes ``false`` and vce versa
 Alternatively, ``and``, ``or``, and ``not`` can be used nterchangeably with ``&&``, ``||``, and ``!``.
+
 **NOTE**: ``&&`` and ``||`` perform short-circuitng, meaning the second operand is only evaulated if the result is not gauranteed by the first.
 
 **Comparson Operators**:
@@ -145,11 +146,11 @@ These operators compare values and return a ``bool`` (1 for ``true``, 0 for ``fa
 - **>>**: Input stream
 
 **pointers**:
-- *****: accesses value at poiinter address
+- *: accesses value at poiinter address
 - **&**: returns memory address of a variable
-- ->: accesses array elements via pointer
-- **new**: allocates memory on the heap and returns a pointer to it.
-- **delete**: frees memory previously  allocated with ``new``
+- **->**: accesses array elements via pointer
+- ``**new**``: allocates memory on the heap and returns a pointer to it.
+- ``**delete**``: frees memory previously  allocated with ``new``
 
 **arrays/vector**:
 - **[]**; Subscript, accesses elements by index
