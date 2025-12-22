@@ -230,7 +230,12 @@ if (condition1) {
 ```
 
 #### *switch* statement
-
+``break`` us required to exit a ``switch`` statement once a matching case has executed, otherwise the program will fall through and execute all subsequent cases regardless of their conditions.
+So in short:
+- C++ allows fall-through between cases if break is omitted.
+- You usually need ``break`` to prevent execution from continuing.
+- ``continue`` does not force the evaluation of the next case, it acts on loops, instead.
+- Alternatives to break include ``return``, ``goto``.
 
 ## Code Delimiters
 use braces ``{}`` to form blocks in selecton and loop constructs.
@@ -260,7 +265,6 @@ if (returns_false() & returns_true()) {
 }
 ```
 
-## Problems...
 ### dangling else problem...
 ``else`` always beiinds to the **nearest preceding unmatched if**.
 for example:
@@ -285,9 +289,17 @@ if (a) {
 
 
 ## Loops
-### While
-### For
-### etc
+C++ has the following loop types: ``for``, ``while``, ``do-while``.
+| loop          | Condition checked at... | Typically used for
+| ------------- | -------------  | ------------------|
+| for  | before each iteration  |  counted repetition |
+| while  | before loop  | unknown number of iterations |
+| do-while | after block runs | must run the body at least once |
+### for
+
+### while
+
+### do-while
 
 ## Block Variables vs Function Variables
 
