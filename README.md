@@ -290,18 +290,26 @@ if (a) {
 
 ## Loops
 C++ has the following loop types: ``for``, ``while``, ``do-while``.
-| loop          | Condition checked at... | Typically used for
+| loop          | condition checked at... | typically used for...
 | ------------- | -------------  | ------------------|
-| for  | before each iteration  |  counted repetition |
-| while  | before loop  | unknown number of iterations |
-| do-while | after block runs | must run the body at least once |
-### for
+| for  | top/before each iteration  |  counted repetition |
+| while  | top/before loop  | unknown number of iterations |
+| do-while | bottom/after block runs | must run the body at least once |
 
-### while
+## Scope: Block Variables vs Function Variables
+Variables declared inside a loop *block* or *header* have block scope, they are then destroyed when the loop finishes. Variables in function scope live until the function returns.
 
-### do-while
-
-## Block Variables vs Function Variables
+for example:
+```
+for (int i = 0; i < 3; i++) {}
+cout << i; // compiler error: i is not visible
+```
+on the other hand, variables declared before the loop persist throughout the function:
+```
+int i = 0;
+for (; i < 3; i++) {}
+cout << i; // prints 3
+```
 
 ## Functions
 
