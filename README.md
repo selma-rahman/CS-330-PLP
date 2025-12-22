@@ -240,7 +240,7 @@ example:
 if ( x > 0) {
     cout < "positive";
 }
-``
+```
 
 ## Short-Circuit Evaluation
 - ``&&`` short-circuits when the left operand is false
