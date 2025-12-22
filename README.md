@@ -183,9 +183,23 @@ complex<long double>
 *see fopc_controls.cpp for executable code examples
 
 ### Boolean Values
-A boolean type is *bool*, which can take the values **true (1)** or **false(0)**. A boolean variable is declared with the *bool* keyword and can take the values *true* or *false*.
+A boolean type is *bool*, which can take the values:
+- **true (1)**
+- **false(0)**.
+
+A boolean variable is declared with the *bool* keyword and can take the values *true* or *false*.
+
+Expressions that evaluate to non-zero integers convert to true implicitly:
+```
+bool b6 = 4; // true
+bool b7 = 0; // false
+```
 
 ### Conditional Statements
+C++ supports: ``if``, ``if/else``, ``if/else f/else``, and ``switch/case``.
+
+C++ does *not* provide alternative keywords. (Such as Perl's ``unless``).
+
 #### *if* statement
 The **if** statement is used to specify a block of code to be executed if a condition is true. Note that **if** is in lowercase, changing either or both letters to uppercase will produce an error.
 ```
@@ -217,12 +231,58 @@ if (condition1) {
 
 #### *switch* statement
 
+
 ## Code Delimiters
+use braces ``{}`` to form blocks in selecton and loop constructs.
+
+example:
+```
+if ( x > 0) {
+    cout < "positive";
+}
+``
 
 ## Short-Circuit Evaluation
+- ``&&`` short-circuits when the left operand is false
+- ``||`` short-circuits when the left operand is true
+
+for example, the second operand s NOT evaulated here:
+```
+if (returns_false() && returns_true()) {
+  ...
+}
+```
+
+here, both are evaulated (bitwise & instead of logical &&):
+```
+if (returns_false() & returns_true()) {
+  ...
+}
+```
 
 ## Problems...
 ### dangling else problem...
+``else`` always beiinds to the **nearest preceding unmatched if**.
+for example:
+```
+if (a)
+    if (b)
+        cout << "inner";
+    else
+        cout << "else binds to the inner if";
+```
+
+to avoid this sort of ambiguity, use braces:
+```
+if (a) {
+    if (b) {
+        ...
+    }
+} else {
+    ...
+}
+```
+
 
 ## Loops
 ### While
