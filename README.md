@@ -168,7 +168,16 @@ auto res = x + y; // becomes double
 - cannot store mixed types in standard arrays/vectors
 - must explicitly connvert some data between types
 
-## Data Types
+### Built-In Complex Data Types
+C++ includes support for complex numbers through the ``<complex>`` library. The ``std::complex<T>`` type provides an abstraction for real and imaginary components and overloads arithmetic operators.
+- it stores a real part + an imaginary part
+- overloads operators so the math works naturally
+- the type os templated: see below
+```
+complex<float>
+complex<double>
+complex<long double>
+```
 
 ## Control Statements
 *see fopc_controls.cpp for executable code examples
