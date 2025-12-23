@@ -633,12 +633,12 @@ C++ does not have a built-in ``toString()`` methods like Java or Python.
 Instead, C++ uses **operator overloading**, most commonly ``operator<<`` for output streams.
 
 Example:
-``
+```
 std::cout << person;
-``
+```
 
 Implemented as:
-``
+```
 std::ostream& operator<<(std::ostream& os, const Person& p);
 ```
 
