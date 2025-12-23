@@ -651,7 +651,7 @@ class Student : public Person {};
 - ``protected`` and ``private`` inheritance exist but are less common
 
 C++ supports multiple inheritance, unlike java:
-``
+```
 class StaffStudent : public Student, public Employee {};
 ```
 
