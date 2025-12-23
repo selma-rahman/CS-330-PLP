@@ -10,15 +10,15 @@ classes, etc. in order to support larger software development.
 C++ is a general purpose programming language. It can be seen in many areas, including:
 - Game design and graphics
 - Operating Systems
-- Embedded systems and frmware
+- Embedded systems and firmware
 - Compilers
 - Browsers
 - Databases
-- and much more?
+- and much more!
 
 ## Installation
 To install C++ and start compiling programs, you need a compiler. Common choices include:
-- macOS/Linux: Clang or GCC (GNU Compler Collection)
+- macOS/Linux: Clang or GCC (GNU Complier Collection)
 - Windows: MinGW-w64 or Microsoft Visual C++ Build Tools
 
 ## Programming Environemnt / IDE
@@ -29,12 +29,12 @@ C++ does not require a specific IDE. Many options exist, including:
 - Xcode
 - Code::Blocks
 
-- My Choice: Visual Studio Code
+- **My Choice**: Visual Studio Code
 
 ## Running Programs
 To compile a program from the terminal:
 ```
-g++ fileame.cpp -o program
+g++ filename.cpp -o program
 ```
 then run:
 ```
@@ -45,7 +45,7 @@ On Windows MinGW:
 program.exe
 ```
 
-## Writng Comments in C++
+## Writing Comments in C++
 Single line comments 
 ```
 // this is a comment
@@ -89,9 +89,9 @@ The compiler obstructs from using them as identifiers.
 C++ is **statically typed**. Variables types are determined at compile time.
 
 #### Strongly typed or weakly typed?
-Strongly typed, due to a few reasons:
+C++ is generally considered strongly typed, though it allows certain implicit conversioins.
 - Incompatible types cause compiler errors
-- Pointers require explicit conversoins
+- Pointers require explicit conversions
 - Implicit conversions exist but are limited
 
 #### Explicitly typed or implicitly typed?
@@ -99,7 +99,7 @@ Traditionally, C++ is explicitly typed.
 ```
 int x = 42;
 ```
-However, C++11 implicit type interference exists with ``auto``.
+However, C++11 implicit type inferece exists with ``auto``.
 ```
 auto x = 42; // x becomes int implicitly
 ```
@@ -117,9 +117,9 @@ Operators depend on the type. Common ones include:
 - *: addition
 - **-**: subtraction
 - *: multiplication
-- **/**: divison
-- **Int divison**: Performs integer division, discarding any remainder
-- **Floats divison**: Performs floating-point divison
+- **/**: division
+- **Int division**: Performs integer division, discarding any remainder
+- **Floats division**: Performs floating-point division
 - **%**: Modulus. Returns the remainder of division. **Only for integers**.
 - **++**: Increments a value by 1
 - **--**: Decrements a value by 1
@@ -127,10 +127,10 @@ Operators depend on the type. Common ones include:
 **bool**:
 - **&&**: Logical AND; returns ``true`` if both operands are ``true``.
 - **||**: Logical OR; returns ``true`` if at least one operand is ``true``.
-- **!**: Logical NOT, Inverts the value; ``true`` becomes ``false`` and vce versa
+- **!**: Logical NOT, Inverts the value; ``true`` becomes ``false`` and vice versa
 Alternatively, ``and``, ``or``, and ``not`` can be used nterchangeably with ``&&``, ``||``, and ``!``.
 
-**NOTE**: ``&&`` and ``||`` perform short-circuitng, meaning the second operand is only evaulated if the result is not gauranteed by the first.
+**NOTE**: ``&&`` and ``||`` perform short-circuiting, meaning the second operand is only evaluated if the result is not gauranteed by the first.
 
 **Comparison Operators**:
 These operators compare values and return a ``bool`` (1 for ``true``, 0 for ``false``).
@@ -163,10 +163,10 @@ double y = 2.5;
 auto res = x + y; // becomes double
 ```
 
-#### Limitions
+#### Limitations
 - cannot add strings + ints without conversion
 - cannot store mixed types in standard arrays/vectors
-- must explicitly connvert some data between types
+- must explicitly convert some data between types
 
 ### Built-In Complex Data Types
 C++ includes support for complex numbers through the ``<complex>`` library. The ``std::complex<T>`` type provides an abstraction for real and imaginary components and overloads arithmetic operators.
@@ -203,16 +203,16 @@ C++ does *not* provide alternative keywords. (Such as Perl's ``unless``).
 #### *if* statement
 The **if** statement is used to specify a block of code to be executed if a condition is true. Note that **if** is in lowercase, changing either or both letters to uppercase will produce an error.
 ```
-if (some conditions)
+if (condition)
   // statements
-end
+}
 ```
 If the condition is true then do something, and if not then do something else.
 
 #### *else* statement
 The **else** statement is used to specify a block of code to be executed if the condition is false.
 ```
-if (condiition)
+if (condition)
 // execute if the condition is true
 } else {
 // execute if the condition is false
@@ -333,7 +333,7 @@ int multiply(int a, int b) {
 - parameters are optional and separated by commas
   
 ### Rules about function placement
-In C++ a function must be declared before it is used. If the functioin is defined after ``main()`` or another function that tries to use, then the compiler will not recognize it. Declaring a function can be done in the following ways:
+In C++ a function must be declared before it is used. If the function is defined after ``main()`` or another function that tries to use, then the compiler will not recognize it. Declaring a function can be done in the following ways:
 1. Define a function *above* ``main()``.
 2. Declare a function prototype before ``main()`` and define it later.
 
@@ -361,7 +361,7 @@ A recursive function must:
 
 Example (factorial):
 ```
-unsigned long long factorial(unsiigned int n) {
+unsigned long long factorial(unsigned int n) {
     if (n<= 1) return 1;
     return n * factorial(n - 1);
 }
@@ -389,7 +389,7 @@ std::pair<std::string, std::string> split(const std::string& s);
 ```
 check ``functions.cpp`` to  see this approach
 ### Pass-by-Value & Pass-by-Reference
-C++ supportes both:
+C++ supports both:
 - Pass-by-value (default): function receives a copy
 - Pass-by-reference: function modifies original variable using ``&``
 
@@ -488,8 +488,8 @@ const-correctness benefits:
 An ``inline`` function suggests to the compiler that it should replace the function call with the function body.
 Example:
 ```
-inline int sqaure(int x) {
-    return x * X;
+inline int square(int x) {
+    return x * x;
 }
 ```
 Benefits include:
@@ -516,7 +516,7 @@ This enables:
 lambda expressions can define unnamed functions inline.
 Example:
 ```
-auto sqaure = [] (int x) { return x * x; } ;
+auto square = [] (int x) { return x * x; };
 ```
 They are usually used for:
 - short callbacks
@@ -528,9 +528,9 @@ lambdas can capture variables by value or reference
 Functions may throw and handle exceptions using ``throw``, ``try``, and ``catch``.
 Example:
 ```
-if safeDiviide(int a, int b) {
+if safeDivide(int a, int b) {
     if (b == 0) throw std::runtime_error("Division by zero");
-    return a/b;
+    return a / b;
 }
 ```
 Exceptions:
@@ -538,7 +538,7 @@ Exceptions:
 - propagate up the call stack
 - must be explicitly caught
 
-### Statc Local Variables
+### Static Local Variables
 A function may contain static local variables that persist across function calls.
 Example:
 ```
@@ -551,12 +551,12 @@ int counter() {
 - retain value between calls
 - stored in static storage, not on the stack
 
-### Name Manglng and Linkage
+### Name Mangling and Linkage
 | Feature          | Name Mangling | Linkage (``extern "C"``
 | ------------- | -------------  | ------------------|
-| Purpose  | Distinguish overloaded/scoped functions  |  Faciillitate C/C++ interoperability  |
+| Purpose  | Distinguish overloaded/scoped functions  |  Facilitate C/C++ interoperability  |
 | Compiler Action  | Renames symbols (ex: ``foo`` -> ``_Z3fooi``)  | Keeps symbols as-is (ex: ``foo`` -> ``foo``) |
-| Scope | Internal bnary representation | Viisibility across files |
+| Scope | Internal binary representation | Visibility across files |
 
 Example:
 ```
@@ -570,7 +570,7 @@ When an exception is thrown C++ automatically:
 - destroys local objects
 - calls destructors
 - frees stack memory
-This is central to RAII (Resoruce  Acquisition Is Initialization). RAII binds the life cycle of a resource (like heap mmeory) to the lifetime of an object.Ensures that resources acquired during object creation (constructor) and automatically released when the object goes out of scope (destructor).
+This is central to RAII (Resource  Acquisition Is Initialization). RAII binds the life cycle of a resource (like heap memory) to the lifetime of an object.Ensures that resources acquired during object creation (constructor) and automatically released when the object goes out of scope (destructor).
 
 ### Static vs Dynamic Scope
 C++ uses static (lexical) scoping:
@@ -581,7 +581,7 @@ Dynamic scoping is NOT supported.
 
 ## Classes & Inheritance
 ### Does C++ support objects or something similar?
-Yes, C++ supports objects through *classes* and *structs* types, which are user-defined types that can contain data members (instance variables), member functions (methods), nested types, static members, etc. A *class* and a *struct* are nearly identical, the only difference being default access (private for class, public for struct). In C++ the term *object* generally means an instance of any type (built-in or urser-defined).
+Yes, C++ supports objects through *classes* and *structs* types, which are user-defined types that can contain data members (instance variables), member functions (methods), nested types, static members, etc. A *class* and a *struct* are nearly identical, the only difference being default access (private for class, public for struct). In C++ the term *object* generally means an instance of any type (built-in or user-defined).
 
 A **class** groups:
 - instance variables (data members)
@@ -593,7 +593,7 @@ Example:
 #include <cmath>
 #include <string>
 
-//example using struct (defult public access)
+//example using struct (default public access)
 struct Point {
   double x, y;
   double length() const {
@@ -611,9 +611,9 @@ public:
   }
 };
 ```
-C++ supports object-orented programming through the use of ``class`` and ``struct`` types. Both allow programmers to define custom data types that bundle data (instance variables) together with behavior (member functions).
+C++ supports object-oriented programming through the use of ``class`` and ``struct`` types. Both allow programmers to define custom data types that bundle data (instance variables) together with behavior (member functions).
 
-The primary differences between `struct`` and ``class`` in C++ is **defult access control**: members of a ``struct`` are public by default, and members of a ``class`` are private by default. Aside fromt this they're functionally identical.
+The primary differences between ``struct`` and ``class`` in C++ is **defult access control**: members of a ``struct`` are public by default, and members of a ``class`` are private by default. Aside from this they're functionally identical.
 
 Objects are created by instantiating these types, and they support constructors, methods, encapsulation, inheritance, and polymorphism.
 
