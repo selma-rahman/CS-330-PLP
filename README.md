@@ -618,23 +618,92 @@ The primary differences between `struct`` and ``class`` in C++ is **defult acces
 Objects are created by instantiating these types, and they support constructors, methods, encapsulation, inheritance, and polymorphism.
 
 ### Naming conventions for objects, instance variables, and functions
-C++ does not enforce naming conventions, but common community conventions help readability and consistency: 
+C++ does **not enforce** naming conventions, but common community conventions help readability and consistency: 
 - **Types (classes/structs/enum)**: PascalCase or CamelCase (Person, HttpServer, MyStruct)
-- **Functions & Methods**: snake_case or camelCase depending on project style (compute_bug, getValue, toString).
+- **Functions / Methods**: snake_case or camelCase depending on project style (compute_bug, getValue, toString).
 - **Member variables**: m_prefix or trailing underscore to distinguish from parameters (m_value, value_). Example: int value_ or int m_value.
 - **Constants/macros**: kPascalCase or ALL_CAPS (macros usually ALL_CAPS).
 - **Namespaces**: lowercase or company::project style.
 
 Pick a style consistent with your project. Conventions are typically community/team-driven rather than language-enforced.
 
-### Standard methods for a common purpose 
+### Standard methods for common purposes
+C++ does not have a built-in ``toString()`` methods like Java or Python.
+
+Instead, C++ uses **operator overloading**, most commonly ``operator<<`` for output streams.
+
+Example:
+``
+std::cout << person;
+``
+
+Implemented as:
+``
+std::ostream& operator<<(std::ostream& os, const Person& p);
+```
 
 ### How does inheritance work? Multiple inheritance?
+Inheritance is declared using a colon (``:``):
+```
+class Student : public Person {};
+```
+- ``public`` inheritance preserves access levels
+- ``protected`` and ``private`` inheritance exist but are less common
 
-### If there is inheritance, how does C++ deal with overloading method names and resolving calls?
+C++ supports multiple inheritance, unlike java:
+``
+class StaffStudent : public Student, public Employee {};
+```
+
+**Note** However, multiple inheritance can introduce complexity, so be sure to use it carefully.
+
+### Method overriding & call resolution
+C++ uses virtual functions for runtime polymorphism.
+- Base class function must be marked ``virtual``
+- derived class overrides it
+- calls are resolved at runtime through a vtable
+
+Example:
+```
+class Person {
+public:
+    virtual void introduce() const;
+};
+
+class Student : public Person {
+public:
+    void introduce() const override;
+};
+```
+The ``override`` keyword:
+- is optional
+- but helps the compiler catch mistakes
 
 ## Further notes about objects and inheritance 
+**Virtual destructors**
+If a class is intended to be inherited from, it must have a virtual destructor:
+```
+virtual ~Person() = default;
+```
+This ensures derived objects are destroyed correctly.
 
+**Access control**
+C++ has three access levels:
+- ``public``
+- ``protected``
+- ``private``
+
+**Object slicing**
+Assigning a deriived object to a base object by value removes derived parts.
+
+Example:
+```
+Person p = Student(...); // slicing occurs
+```
+Using references or pointers avoids this:
+```
+Person& p = student;
+```
 
 ## Resources
 
