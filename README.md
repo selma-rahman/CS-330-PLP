@@ -580,22 +580,42 @@ Dynamic scoping is NOT supported.
 
 
 ## Classes & Inheritance
-### Does C++ support objects / structs / records? 
-Yes, C++ supports *class* and *struct* types, which are user-defined types that can contain data members (instance variables), member functions (methods), nested types, static mebers, etc. A *class* and a *struct* are nearly identical, the only difference being default access (private for class, public for struct). In C++ the term 'object' generally means an instance of any type (built-in or urser-defined).
+### Does C++ support objects or something similar?
+Yes, C++ supports objects through *classes* and *structs* types, which are user-defined types that can contain data members (instance variables), member functions (methods), nested types, static members, etc. A *class* and a *struct* are nearly identical, the only difference being default access (private for class, public for struct). In C++ the term *object* generally means an instance of any type (built-in or urser-defined).
+
+A **class** groups:
+- instance variables (data members)
+- functions (member methods)
+Objects  are instances of a class
 
 Example:
 ```
-struct Point {  // default publiic
+#include <cmath>
+#include <string>
+
+//example using struct (defult public access)
+struct Point {
   double x, y;
-  double length() coonst {return std::hypot(x,y); }
+  double length() const {
+      return std::hypot(x, y);
+  }
 };
-class Person{ // default private
+
+//example using class (default private access)
+class Person{
   std::string name;
 public:
   Person(std::string n): name(std::move(n)) {}
-  const std::string& getName() const { return name; }
+  const std::string& getName() const {
+      return name;
+  }
 };
 ```
+C++ supports object-orented programming through the use of ``class`` and ``struct`` types. Both allow programmers to define custom data types that bundle data (instance variables) together with behavior (member functions).
+
+The primary differences between `struct`` and ``class`` in C++ is **defult access control**: members of a ``struct`` are public by default, and members of a ``class`` are private by default. Aside fromt this they're functionally identical.
+
+Objects are created by instantiating these types, and they support constructors, methods, encapsulation, inheritance, and polymorphism.
 
 ### Naming conventions for objects, instance variables, and functions
 C++ does not enforce naming conventions, but common community conventions help readability and consistency: 
