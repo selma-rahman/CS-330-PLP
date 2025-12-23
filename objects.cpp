@@ -11,7 +11,7 @@ public:
     int age;
 
     // constuctors
-    Person() : name("Unamed"), age(0) {}
+    Person() : name("Unnamed"), age(0) {}
     Person(std::string n, int a) : name(std::move(n)), age(a) {}
 
     //member function
@@ -23,13 +23,13 @@ public:
     void setName(std::string n) { name = std::move(n); }
     std::string getName() const { return name; }
 
-    // virtal destructor
-    //virtual ~Person() = default;
+    // virtual destructor
+    virtual ~Person() = default;
 };
 
 // "toString" pattern: overload operator << for stream output
-inline std::ostream& operator,(std::ostream& os, Person const& p) {
-    os << "Person(name=\"" << p.name << "\", age="<< p.age << ")";
+inline std::ostream& operator<<(std::ostream& os, const Person& p) {
+    os << "Person(name=\"" << p.name << "\", age=" << p.age << ")";
     return os;
 }
 
@@ -39,7 +39,7 @@ public:
     std::string major;
     double gpa;
 
-    Student() : Person(), major("Undecalred"), gpa(0.0) {}
+    Student() : Person(), major("Undeclared"), gpa(0.0) {}
     Student(std::string n, int a, std::string m, double g)
         : Person(std::move(n), a), major(std::move(m)), gpa(g) {}
 
@@ -67,20 +67,30 @@ public:
 class StaffStudent : public Student, public Employee {
 public: 
     StaffStudent(std::string n, int a, std::string m, double g, std::string c)
-        : Student(std::move(n), a, std::move(m), g), Employee(Std::move(c)) {}
+        : Student(std::move(n), a, std::move(m), g), Employee(std::move(c)) {}
 
     //override the 2 behaviors
     void introduce() const override {
-        std::cout << "Hi, I'm " << anme << "; juggling study and work at "
+        std::cout << "Hi, I'm " << name << "; juggling study and work at "
                   << company << ".\n";
     }
 
 };
 
 int main() {
-    Person alice("Koda",28);
+    Person koda("Koda",8);
     koda.introduce();
     std::cout << koda << "\n";
 
-    koda.setName("Koda Winter")
+    koda.setName("Koda Winter");
+    koda.introduce();
+
+    Student s("Leo", 4, "Computer Science", 3.9);
+    s.introduce();
+    s.study("Computer Languages");
+
+    StaffStudent ss("Delilah", 12, "Math", 3.7, "Library");
+    ss.introduce();
+
+    return 0;
 }
