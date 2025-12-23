@@ -113,7 +113,7 @@ const int x =  42;
 #### Operators 
 Operators depend on the type. Common ones include:
 
-***int***, **float**:
+**int**, **float**:
 - *: addition
 - **-**: subtraction
 - *: multiplication
@@ -132,7 +132,7 @@ Alternatively, ``and``, ``or``, and ``not`` can be used nterchangeably with ``&&
 
 **NOTE**: ``&&`` and ``||`` perform short-circuitng, meaning the second operand is only evaulated if the result is not gauranteed by the first.
 
-**Comparson Operators**:
+**Comparison Operators**:
 These operators compare values and return a ``bool`` (1 for ``true``, 0 for ``false``).
 - ``==`` (Equal to)
 - ``!=`` (Not equal to)
@@ -146,7 +146,7 @@ These operators compare values and return a ``bool`` (1 for ``true``, 0 for ``fa
 - **>>**: Input stream
 
 **pointers**:
-- *: accesses value at poiinter address
+- *: accesses value at pointer address
 - **&**: returns memory address of a variable
 - **->**: accesses array elements via pointer
 - ``new``: allocates memory on the heap and returns a pointer to it.
@@ -156,7 +156,7 @@ These operators compare values and return a ``bool`` (1 for ``true``, 0 for ``fa
 - **[]**; Subscript, accesses elements by index
 
 #### Mixed type operations
-Mixed type operations are allowed in C++, as it performs **type promotoin**
+Mixed type operations are allowed in C++, as it performs **type promotion**
 ```
 int x = 5;
 double y = 2.5;
@@ -265,8 +265,8 @@ if (returns_false() & returns_true()) {
 }
 ```
 
-### dangling else problem...
-``else`` always beiinds to the **nearest preceding unmatched if**.
+### Dangling else problem...
+``else`` always binds to the **nearest preceding unmatched if**.
 for example:
 ```
 if (a)
@@ -340,7 +340,7 @@ In C++ a function must be declared before it is used. If the functioin is define
 Further explanation with ``main()``:
 There is not a strict rule on where ``main()`` needs to be, but it's common practice to have either at the very top or bottom of a file. 
 - **Top-down**: ``main()`` at the top, with helper functions define belowed. Doing this requires forward declarations, aka prototypes.
-- **Bottom-up**: helper functions are defined first, with main() at the bottom. This allows calling functions without declarations.
+- **Bottom-up**: helper functions are defined first, with ``main()`` at the bottom. This allows calling functions without declarations.
 
 Example with prototype:
 ```
@@ -375,7 +375,7 @@ for example:
 ```
 double compute(double x, int y, bool flag);
 ```
-Note, templates (as used in ``multiply<T>``) allow generic parameter types. Recall, a generic type parameter is a placeholder for a specific data type like ``int``, that is substituted with an actual type at compile time.
+**Note** templates (as used in ``multiply<T>``) allow generic parameter types. Recall, a generic type parameter is a placeholder for a specific data type like ``int``, that is substituted with an actual type at compile time.
 ### Returning multiple values at the same time
 C++ functions can return **only one value**, but there are couple workarounds with this, which include:
 - ``std::pair``
@@ -418,7 +418,7 @@ if (true) {
 // x no longer exists here
 ```
 ### Side Effects
-Side effects *are** possible with C++.
+Side effects *are* possible with C++.
 Side effects can be seen by:
 - Modifying reference parameters
 - Changing global variables
@@ -440,7 +440,7 @@ void safe(const int& x): // cannot modify x
 
 Example:
 ```
-static  int  counter = 0; // persists across calls
+static int counter = 0; // persists across calls
 ```
 ### Function Overloading
 C++ allows multiple functions with the same name, as long as their parameter lists differ in type or number.
@@ -455,6 +455,7 @@ The compiler determines which version to class at compile time based on argument
 
 ### Default Arguments
 Functions can define default values for parameters. If the caller omits those arguments, the default is used.
+
 Example:
 ```
 void longMessage(const std::string& msg, int level = 1);
@@ -471,6 +472,7 @@ Default parameters must appear after non-default parameters.
 
 ### Const-Correctness
 The ``const`` keyword is used to prevent unintended modification of parameters and objects.
+
 Example:
 ```
 void print(const std::string& s);
@@ -493,6 +495,7 @@ inline int sqaure(int x) {
 Benefits include:
 - reduces function-call overhead
 - often used for small, frequently called functions
+
 **NOTE**: The compiler might ignore ``inline`` if it deems it inefficient
 
 ### Templates and Generic Functions
