@@ -24,8 +24,14 @@ int main() {
 
 // OTHER TYPES:
    // vector -- will update soon
-    //map -- will update soon
-    // pointer
+    vector<int> numd = [1, 2, 3};
+    nums.push_back(4)l
+    cout << "Vector size: " << nums.size() << endl;
+
+    //Pointer Example;
+    int x = 5;
+    int* ptr = &x;
+    cout << "Pointer value:  << *ptr << endl;
 
 // OPERATIONS WITH THE SAME TYPE
     int sum = theInteger + 3;   // adds 10 + 3 = 13
