@@ -312,14 +312,269 @@ cout << i; // prints 3
 ```
 
 ## Functions
+Functions allow code to be reused, organzied,and abstracted. A function in C++ can accept parameters, perform operations, and optionally return a value. 
+Executable examples for all topics in this section can be found in ``functions.cpp``.
 
 ### What is the syntax for declaring a function?
+The general syntax for declaring a function is:
+```
+return_type function_name(parameter_type parameter_name, ...) {
+  // function body
+}
+```
+for example:
+```
+int multiply(int a, int b) {
+    return a * b;
+}
+```
+- ``return_type`` specifies the type of value returned (or ``void``)
+- ``function_name`` is the identifier
+- parameters are optional and separated by commas
+  
 ### Rules about function placement
+In C++ a function must be declared before it is used. If the functioin is defined after ``main()`` or another function that tries to use, then the compiler will not recognize it. Declaring a function can be done in the following ways:
+1. Define a function *above* ``main()``.
+2. Declare a function prototype before ``main()`` and define it later.
+
+Further explanation with ``main()``:
+There is not a strict rule on where ``main()`` needs to be, but it's common practice to have either at the very top or bottom of a file. 
+- **Top-down**: ``main()`` at the top, with helper functions define belowed. Doing this requires forward declarations, aka prototypes.
+- **Bottom-up**: helper functions are defined first, with main() at the bottom. This allows calling functions without declarations.
+
+Example with prototype:
+```
+int multiply(int a, int b);
+
+int main() {
+    multiply(2, 3);
+}
+
+int multiply(int a, int b) {
+    return a * b;
+}
+```
 ### Recursive functions
-### Multiple Parameters 
+A recursive function must:
+- Call itself
+- Include a base case to stop recursion
+
+Example (factorial):
+```
+unsigned long long factorial(unsiigned int n) {
+    if (n<= 1) return 1;
+    return n * factorial(n - 1);
+}
+```
+Note that without a base case, recursion causes stack overflow!
+### Multiple Parameters
+C++ functions may accept:
+- any number of parameters
+- parameters of different data types
+for example:
+```
+double compute(double x, int y, bool flag);
+```
+Note, templates (as used in ``multiply<T>``) allow generic parameter types. Recall, a generic type parameter is a placeholder for a specific data type like ``int``, that is substituted with an actual type at compile time.
 ### Returning multiple values at the same time
-### Pass-by reference and Pass-by value
-### 
+C++ functions can return **only one value**, but there are couple workarounds with this, which include:
+- ``std::pair``
+- ``std::tuple``
+- passing parameters by reference
+- returning a struct or class
+
+example using ``std::pair'':
+```
+std::pair<std::string, std::string> split(const std::string& s);
+```
+check ``functions.cpp`` to  see this approach
+### Pass-by-Value & Pass-by-Reference
+C++ supportes both:
+- Pass-by-value (default): function receives a copy
+- Pass-by-reference: function modifies original variable using ``&``
+
+Example:
+```
+void incr_by_value(iint x);
+void incr_by_reference(int& x);
+```
+### Where are parameters and variables stored during execution?
+- **Primitive values**: stored on the stack
+- **References**: stored on the stack but refer to data elsewhere
+- **Heap-allocated objects**: stored on the heap, via ``new``
+- **Local variables**: stack-allocated unless optimized
+
+### What are the scoping rules?
+C++ uses lexical (static) scoping.
+- Variables are visible only withiin the block {} where declared
+- Function-local variables exist until function returns
+- Block variables exist only within their block
+
+Example:
+```
+if (true) {
+    innt x = 5;
+}
+// x no longer exists here
+```
+### Side Effects
+Side effects *are** possible with C++.
+Side effects can be seen by:
+- Modifying reference parameters
+- Changing global variables
+- Writing to files or output streams
+
+Guard-rails exist as well, which include:
+- ``const`` correctness
+- Pass-by-value
+- Encapsulation with classes
+Example:
+```
+void safe(const int& x): // cannot modify x
+```
+
+### Where are local variables stored?
+- Local variables: **stack**
+- Dynamically allocated objects (``new``):  **heap**
+- Static  local variables: **static storage**
+
+Example:
+```
+static  int  counter = 0; // persists across calls
+```
+### Function Overloading
+C++ allows multiple functions with the same name, as long as their parameter lists differ in type or number.
+
+Example:
+```
+int add(int a, int b);
+double add(double a, double b);
+```
+The compiler determines which version to class at compile time based on argument types.
+**Note**: Return type alone is *not* sufficient for overloading.
+
+### Default Arguments
+Functions can define default values for parameters. If the caller omits those arguments, the default is used.
+Example:
+```
+void longMessage(const std::string& msg, int level = 1);
+```
+Calling:
+```
+longMessage("Hello");
+```
+is equivalent to:
+```
+longMessage("Hello", 1);
+```
+Default parameters must appear after non-default parameters.
+
+### Const-Correctness
+The ``const`` keyword is used to prevent unintended modification of parameters and objects.
+Example:
+```
+void print(const std::string& s);
+```
+This ensures the function cannot alter `s`.
+
+const-correctness benefits:
+- improves safety
+- enables compiler optimizations
+- clarifies the prorgammers intent
+
+### Inline Functions
+An ``inline`` function suggests to the compiler that it should replace the function call with the function body.
+Example:
+```
+inline int sqaure(int x) {
+    return x * X;
+}
+```
+Benefits include:
+- reduces function-call overhead
+- often used for small, frequently called functions
+**NOTE**: The compiler might ignore ``inline`` if it deems it inefficient
+
+### Templates and Generic Functions
+Templates allow functions to operate on multiple data types without rewriting code.
+Example:
+```
+template<typename T>
+T multiply(T a, T b) {
+    return a * b;
+}
+```
+This enables:
+- compile-time type safety
+- high performance
+- generic programming
+
+### Lambda Functions (Anonymous Functions)
+lambda expressions can define unnamed functions inline.
+Example:
+```
+auto sqaure = [] (int x) { return x * x; } ;
+```
+They are usually used for:
+- short callbacks
+- algorithms (``std::sort``, ``std::find_if``)
+- functional-style programming
+lambdas can capture variables by value or reference
+
+### Exception Handling in Functions
+Functions may throw and handle exceptions using ``throw``, ``try``, and ``catch``.
+Example:
+```
+if safeDiviide(int a, int b) {
+    if (b == 0) throw std::runtime_error("Division by zero");
+    return a/b;
+}
+```
+Exceptions:
+- separate error-handling from logic
+- propagate up the call stack
+- must be explicitly caught
+
+### Statc Local Variables
+A function may contain static local variables that persist across function calls.
+Example:
+```
+int counter() {
+    static int count = 0;
+    return ++count;
+}
+```
+- initialized once
+- retain value between calls
+- stored in static storage, not on the stack
+
+### Name Manglng and Linkage
+| Feature          | Name Mangling | Linkage (``extern "C"``
+| ------------- | -------------  | ------------------|
+| Purpose  | Distinguish overloaded/scoped functions  |  Faciillitate C/C++ interoperability  |
+| Compiler Action  | Renames symbols (ex: ``foo`` -> ``_Z3fooi``)  | Keeps symbols as-is (ex: ``foo`` -> ``foo``) |
+| Scope | Internal bnary representation | Viisibility across files |
+
+Example:
+```
+void foo(int);
+void foo(double);
+```
+These become different symbols at link time.
+
+### Stack Unwinding
+When an exception is thrown C++ automatically:
+- destroys local objects
+- calls destructors
+- frees stack memory
+This is central to RAII (Resoruce  Acquisition Is Initialization). RAII binds the life cycle of a resource (like heap mmeory) to the lifetime of an object.Ensures that resources acquired during object creation (constructor) and automatically released when the object goes out of scope (destructor).
+
+### Static vs Dynamic Scope
+C++ uses static (lexical) scoping:
+- Variable bindings determined at compile time
+- Function behavior does not change based on call stack
+Dynamic scoping is NOT supported.
+
 
 ## Classes & Inheritance
 ### Does C++ support objects / structs / records? 
